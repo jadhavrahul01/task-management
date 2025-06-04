@@ -83,14 +83,14 @@ Visit `http://localhost:8000` in your browser.
 ### 🔑 Admin Login
 
 ```
-Email: admin@example.com
+Email: admin@mail.com
 Password: password
 ```
 
 ### 👤 Employee Login
 
 ```
-Email: employee@example.com
+Email: employee@mail.com
 Password: password
 ```
 
