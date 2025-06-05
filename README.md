@@ -1,22 +1,23 @@
----
-
 # 📝 Task Management System (Laravel + Livewire + Mary UI)
 
-A simple task management module built with Laravel, Livewire Volt, and Mary UI. Admins can manage employees and assign tasks. Employees can view and update task statuses.
+A simple task management module built with Laravel, Livewire Volt, and Mary UI. Admins can manage employees and assign, update, and delete tasks. Employees can view and update the status of their assigned tasks.
 
 ---
 
 ## 🚀 Features
 
 * User Authentication (Login only)
-* Admin Panel
+  
+* **Admin Panel**
 
   * Add / Edit Employees
   * Assign tasks to employees
-  * View tasks with filters and statuses
-* Employee Panel
+  * Edit, view, update, and delete tasks
+  * Filter tasks by status, priority or employee
+    
+* **Employee Panel**
 
-  * View assigned tasks
+  * View tasks
   * Update task status (Pending → In Progress → Completed)
 * Task Prioritization (High, Medium, Low)
 * Toast Notifications
@@ -26,7 +27,7 @@ A simple task management module built with Laravel, Livewire Volt, and Mary UI. 
 
 ## 📂 Tech Stack
 
-* Laravel 11
+* Laravel 12
 * Livewire Volt
 * Mary UI
 * Tailwind CSS
@@ -42,15 +43,17 @@ Follow these steps to set up the project on your local machine.
 
 ### 2. Install Dependencies
 
+```bash
 composer install
-npm install && npm run dev
-
+yarn install && yarn dev
+```
 
 ### 3. Environment Configuration
 
+```bash
 cp .env.example .env
 php artisan key:generate
-
+```
 
 Update `.env` with your database credentials:
 
@@ -83,14 +86,14 @@ Visit `http://localhost:8000` in your browser.
 ### 🔑 Admin Login
 
 ```
-Email: admin@mail.com
+Email: admin@mail.com  
 Password: password
 ```
 
 ### 👤 Employee Login
 
 ```
-Email: employee@mail.com
+Email: employee@mail.com  
 Password: password
 ```
 
@@ -98,8 +101,8 @@ Password: password
 
 ## 📌 Notes
 
-* You can update default users or add more via the database or UI.
-* Employees **cannot assign tasks**; only admins can.
-* Project uses enums for task priority and status management.
+* Admins have full control over task assignment, status, and deletion.
+* Employees **cannot assign tasks**; they can only update the status of their own tasks.
+* Project uses enum classes for managing task priorities and statuses.
 
 ---
