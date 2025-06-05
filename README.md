@@ -76,7 +76,9 @@ DB_PASSWORD=your_pass
 ### 🧬 Run Migrations & Seeders
 
 ```bash
-php artisan migrate --seed
+php artisan migrate
+php artisan migrate:fresh --seed
+
 ```
 
 ### 🚀 Start the Server
