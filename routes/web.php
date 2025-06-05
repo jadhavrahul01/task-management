@@ -46,8 +46,7 @@ Route::middleware('admin.auth')->group(
 
                 Route::group(['prefix' => 'employee'], function () {
                     Volt::route('/', 'employee.index')->name('employee.index');
-                    Volt::route('create', 'employee.create')->name('employee.create');
-                    Volt::route('{id}/show', 'employee.show')->name('employee.show');
+                    Volt::route('create', 'employee.create')->name('employee.create'); 
                     Volt::route('{id}/edit', 'employee.edit')->name('employee.edit');
                 });
 
