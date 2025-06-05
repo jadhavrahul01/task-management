@@ -1,108 +1,121 @@
-# 📝 Task Management System (Laravel + Livewire + Mary UI)
+# ✅ Final Project Submission – Task Management System
 
-A simple task management module built with Laravel, Livewire Volt, and Mary UI. Admins can manage employees and assign, update, and delete tasks. Employees can view and update the status of their assigned tasks.
+---
+
+## 📌 Project Overview
+
+This is a simple **Task Management System** built using **Laravel**, **Livewire Volt**, and **Mary UI**. It allows **admins** to manage employees and assign tasks, while **employees** can track and update their task progress.
 
 ---
 
 ## 🚀 Features
 
-* User Authentication (Login only)
-  
-* **Admin Panel**
+### 🔐 Login System
 
-  * Add / Edit Employees
-  * Assign tasks to employees
-  * Edit, view, update, and delete tasks
-  * Filter tasks by status, priority or employee
-    
-* **Employee Panel**
+* Admin and Employee login (no registration)
 
-  * View tasks
-  * Update task status (Pending → In Progress → Completed)
-* Task Prioritization (High, Medium, Low)
-* Toast Notifications
-* Clean and user-friendly UI using Mary UI and Livewire Volt
+### 🛠️ Admin Functionalities
+
+* Add / Edit employees
+* Assign tasks to employees
+* Update and **delete** tasks
+* Filter tasks by **employee, priority, date, or status**
+
+### 👤 Employee Functionalities
+
+* View assigned tasks
+* Update task status (**Pending → In Progress → Completed**)
+* Filter tasks by **priority, date, or status**
+
+### ✉️ Email Notifications
+
+* **Email is sent** automatically when an employee updates a task status to:
+
+  * **In Progress**
+  * **Completed**
+
+### 📊 Additional Features
+
+* Task priority options: **High, Medium, Low**
+* Clean and interactive UI using **Livewire Volt & Mary UI**
+* Toast notifications for actions
 
 ---
 
-## 📂 Tech Stack
+## 📽️ Project Walkthrough Video
 
-* Laravel 12
-* Livewire Volt
-* Mary UI
-* Tailwind CSS
-* MySQL
+📺 **Watch the full project demo video here**:
+👉 [Click to Watch Video]([https://your-drive-or-youtube-link.com](https://drive.google.com/file/d/1toIh4ccDEf2wxYZqjBQ3k0bkCuVKc-hM/view?usp=drive_link))
 
 ---
 
 ## ⚙️ Setup Instructions
 
-Follow these steps to set up the project on your local machine.
-
-### 1. Clone the Repository
-
-### 2. Install Dependencies
+### 📦 Step-by-step Guide
 
 ```bash
+# Clone the repository
+
+# Install dependencies
 composer install
 yarn install && yarn dev
-```
 
-### 3. Environment Configuration
-
-```bash
+# Configure environment
 cp .env.example .env
 php artisan key:generate
 ```
 
-Update `.env` with your database credentials:
+### ⚙️ Update `.env` File
 
-```
-DB_DATABASE=your_database
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+```env
+DB_DATABASE=your_db
+DB_USERNAME=your_user
+DB_PASSWORD=your_pass
 ```
 
-### 4. Run Migrations and Seeders
+### 🧬 Run Migrations & Seeders
 
 ```bash
 php artisan migrate --seed
 ```
 
-This will create the tables and seed the default admin and employee accounts.
-
-### 5. Serve the Application
+### 🚀 Start the Server
 
 ```bash
 php artisan serve
 ```
 
-Visit `http://localhost:8000` in your browser.
+Visit: 👉 [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## 👥 Demo Credentials
+## 📧 Email Configuration (Optional)
 
-### 🔑 Admin Login
+If you want to **test email notifications**, you need to configure **SMTP settings** in your `.env` file. Example setup:
 
-```
-Email: admin@mail.com  
-Password: password
-```
+```env
 
-### 👤 Employee Login
+> You can use services like **Mailtrap** for testing in development.
 
-```
-Email: employee@mail.com  
-Password: password
-```
+---
+
+## 🔐 Demo Credentials
+
+### 🧑‍💼 Admin Login
+
+* **Email:** [admin@mail.com](mailto:admin@mail.com)
+* **Password:** password
+
+### 👨‍🔧 Employee Login
+
+* **Email:** [employee@mail.com](mailto:employee@mail.com)
+* **Password:** password
 
 ---
 
 ## 📌 Notes
 
-* Admins have full control over task assignment, status, and deletion.
-* Employees **cannot assign tasks**; they can only update the status of their own tasks.
-* Project uses enum classes for managing task priorities and statuses.
-
----
+* Only **admins** can assign, edit, view, or delete tasks.
+* **Employees** can only view and update their assigned tasks.
+* Email notifications are triggered on **In Progress** and **Completed** status updates.
+* Project uses **Enums** for task priorities and statuses to keep the logic clean and structured.
