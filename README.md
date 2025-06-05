@@ -18,21 +18,21 @@ This is a simple **Task Management System** built using **Laravel**, **Livewire 
 
 * Add / Edit employees
 * Assign tasks to employees
-* Update and **delete** tasks
-* Filter tasks by **employee, priority, date, or status**
+* Update and delete tasks
+* Filter tasks by employee, priority, date, or status
 
 ### 👤 Employee Functionalities
 
 * View assigned tasks
-* Update task status (**Pending → In Progress → Completed**)
-* Filter tasks by **priority, date, or status**
+* Update task status (Pending → In Progress → Completed)
+* Filter tasks by priority, date, or status
 
 ### ✉️ Email Notifications
 
-* **Email is sent** automatically when an employee updates a task status to:
+* Email is sent automatically when an employee updates a task status to:
 
-  * **In Progress**
-  * **Completed**
+  * In Progress
+  * Completed
 
 ### 📊 Additional Features
 
@@ -98,19 +98,19 @@ If you want to **test email notifications**, you need to configure **SMTP settin
 
 ### 🧑‍💼 Admin Login
 
-* **Email:** [admin@mail.com](mailto:admin@mail.com)
-* **Password:** password
+* Email: [admin@mail.com](mailto:admin@mail.com)
+* Password: password
 
 ### 👨‍🔧 Employee Login
 
-* *Email:* [employee@mail.com](mailto:employee@mail.com)
-* *Password:* password
+* Email: [employee@mail.com](mailto:employee@mail.com)
+* Password: password
 
 ---
 
 ## 📌 Notes
 
-* Only *admins* can assign, edit, view, or delete tasks.
-* *Employees* can only view and update their assigned tasks.
-* Email notifications are triggered on *In Progress* and *Completed* status updates.
-* Project uses *Enums* for task priorities and statuses to keep the logic clean and structured.
+* Only admins can assign, edit, view, or delete tasks.
+* Employees can only view and update their assigned tasks.
+* Email notifications are triggered on In Progress and Completed status updates.
+* Project uses Enums for task priorities and statuses to keep the logic clean and structured.
