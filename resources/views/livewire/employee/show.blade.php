@@ -1,21 +1,15 @@
 <?php
 
 use Livewire\Volt\Component;
-use Livewire\Attributes\{Layout};
 use App\Models\User;
-use App\Models\Order;
 use Livewire\WithPagination;
-use Illuminate\View\View;
-use Livewire\Attributes\Url;
 use Livewire\Attributes\Title;
 
 new class extends Component {
     use WithPagination;
-    #[Title('Customer Details')]
+    #[Title('Employee Details')]
     public $headers;
-
     public $user;
-    public $orders;
 
     public function boot(): void
     {
@@ -25,7 +19,6 @@ new class extends Component {
     public function mount($id)
     {
         $this->user = User::findOrFail($id);
-        $this->orders = Order::where('user_id', $id)->get();
     }
 };
 
@@ -90,82 +83,6 @@ new class extends Component {
                     </div>
                 </div>
             </div>
-            {{-- <div class="w-full">
-                <div class="border-0 card card-border" role="presentation">
-                    <div class="card-body card-gutterless">
-                        <div>
-                            <h6 class="mb-4 font-bold">All Orders</h6>
-                            <hr class="mb-4">
-                            <div class="overflow-x-auto">
-                                <table class="table w-full">
-                                    <thead>
-                                        <tr>
-                                            @foreach ($headers as $header)
-                                                <th class="{{ $header['class'] }}">
-                                                    {{ $header['label'] }}
-                                                </th>
-                                            @endforeach
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse ($orders as $order)
-                                            <tr>
-                                                <td>{{ $order->id }}</td>
-                                                <td>₹{{ $order->grand_total }}</td>
-                                                <td>
-                                                    @php
-                                                        $icon = [
-                                                            'razorpay' => 'frontend-assets/icons/razorpay-icon.svg',
-                                                            'cod' => 'frontend-assets/icons/cod-icon.svg',
-                                                        ];
-                                                    @endphp
-                                                    <span class="badge ">
-                                                        <img src="{{ asset($icon[$order->payment_method]) }}"
-                                                            alt="{{ $order->payment_method }}" class="w-4 h-4 mr-2">
-                                                        {{ $order->payment_method }}
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="badge {{ $order->payment_status === 'paid' ? 'badge-success' : 'badge-error' }}">
-                                                        {{ $order->payment_status }}
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    @php
-                                                        $status = [
-                                                            'submitted' => 'badge-primary',
-                                                            'processing' => 'badge-info',
-                                                            'completed' => 'badge-success',
-                                                            'cancelled' => 'badge-error',
-                                                        ];
-                                                    @endphp
-                                                    <span class="badge {{ $status[$order->order_status] }}">
-                                                        {{ $order->order_status }}
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <x-button icon="o-eye" class="bg-transparent border-none"
-                                                        link="{{ route('admin.order.show', $order->id) }}" />
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="6">
-                                                    <div class="flex justify-center items center">
-                                                        <span class="text-gray-400 dark:text-gray-500">No order
-                                                            found.</span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>

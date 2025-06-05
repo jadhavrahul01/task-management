@@ -5,11 +5,8 @@ use App\Models\User;
 use Mary\Traits\Toast;
 use App\Enums\RolesEnum;
 use Illuminate\View\View;
-use Illuminate\Support\Str;
-use Livewire\Attributes\Url;
 use Livewire\Volt\Component;
 use App\Enums\TaskStatusEnum;
-use App\Enums\TaskPriorityEnum;
 use Livewire\Attributes\Title;
 use App\Mail\NotificationMail;
 use Illuminate\Support\Facades\Mail;
@@ -22,6 +19,7 @@ new class extends Component {
     public $selectedStatus;
     public bool $statusConfrimation = false;
     public bool $extendDeadlineModal = false;
+    public bool $Delete = false;
 
     public function mount($id)
     {
@@ -152,6 +150,12 @@ new class extends Component {
             ->values()
             ->toArray();
     }
+
+    public function delete(): void
+    {
+        $this->task->delete();
+        $this->success('Task Deleted Successfully.', redirectTo: route('admin.task.index'));
+    }
 }; ?>
 
 <div>
@@ -221,6 +225,9 @@ new class extends Component {
                     <h3>Description:</h3>
                     {{ $task->description }}
                 </div>
+                <div class="flex justify-start mt-5">
+                    <x-button label="Delete" class="btn-error" wire:click="$set('Delete', true)" />
+                </div>
             </x-card>
         </x-card>
 
@@ -243,6 +250,13 @@ new class extends Component {
                 <x-slot:actions>
                     <x-button label="Cancel" @click="$wire.extendDeadlineModal = false" />
                     <x-button label="Update" class="btn-primary" wire:click='extend_deadline' spinner="extend_deadline" />
+                </x-slot:actions>
+            </x-modal>
+            <x-modal wire:model="Delete" class="backdrop-blur">
+                <p class="text-lg">Are you sure you want to delete this task?</p>
+                <x-slot:actions>
+                    <x-button label="Cancel" @click="$wire.Delete = false" />
+                    <x-button label="Delete" class="btn-error" wire:click="delete" spinner="delete" />
                 </x-slot:actions>
             </x-modal>
         @endrole
