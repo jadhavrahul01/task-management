@@ -42,13 +42,6 @@ This is a simple **Task Management System** built using **Laravel**, **Livewire 
 
 ---
 
-## 📽️ Project Walkthrough Video
-
-📺 **Watch the full project demo video here**:
-👉 [Click to Watch Video]([https://your-drive-or-youtube-link.com](https://drive.google.com/file/d/1toIh4ccDEf2wxYZqjBQ3k0bkCuVKc-hM/view?usp=drive_link))
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 📦 Step-by-step Guide
