@@ -103,14 +103,14 @@ If you want to **test email notifications**, you need to configure **SMTP settin
 
 ### 👨‍🔧 Employee Login
 
-* **Email:** [employee@mail.com](mailto:employee@mail.com)
-* **Password:** password
+* *Email:* [employee@mail.com](mailto:employee@mail.com)
+* *Password:* password
 
 ---
 
 ## 📌 Notes
 
-* Only **admins** can assign, edit, view, or delete tasks.
-* **Employees** can only view and update their assigned tasks.
-* Email notifications are triggered on **In Progress** and **Completed** status updates.
-* Project uses **Enums** for task priorities and statuses to keep the logic clean and structured.
+* Only *admins* can assign, edit, view, or delete tasks.
+* *Employees* can only view and update their assigned tasks.
+* Email notifications are triggered on *In Progress* and *Completed* status updates.
+* Project uses *Enums* for task priorities and statuses to keep the logic clean and structured.
